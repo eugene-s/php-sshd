@@ -1,15 +1,8 @@
-FROM python:2.7-alpine
+FROM php:5.6-alpine
 MAINTAINER Eugene Savchenko
 
-ENV PROJECT_PATH /usr/src/python-app/
-ENV VENV_PATH /root/venv/
+ENV PROJECT_PATH /var/www/
 ENV SSH_SERVER_KEYS /etc/ssh/host_keys/
-
-#
-# Install virtualenv for developing
-#
-
-RUN pip install --no-cache-dir virtualenv
 
 #
 # Copy rootfs files
@@ -41,6 +34,6 @@ WORKDIR ${PROJECT_PATH}
 # Saving dev virtualenv and ssh host keys
 #
 
-VOLUME ["${VENV_PATH}", "${SSH_SERVER_KEYS}"]
+VOLUME ["${SSH_SERVER_KEYS}"]
 
 ENTRYPOINT ["entrypoint.sh"]
