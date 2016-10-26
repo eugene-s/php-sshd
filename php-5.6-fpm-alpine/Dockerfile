@@ -21,7 +21,6 @@ RUN apk update && \
     echo "root:root" | chpasswd && \
     rm -rf /var/cache/apk/* /tmp
 
-
 #
 # Saving ssh host keys
 #
