@@ -26,6 +26,7 @@ RUN apk update && \
     echo -e "HostKey ${SSH_SERVER_KEYS}ssh_host_ed25519_key" >> /etc/ssh/sshd_config && \
     sed -i "s/#PermitRootLogin.*/PermitRootLogin\ yes/" /etc/ssh/sshd_config && \
     echo "root:root" | chpasswd && \
+    chmod +x /usr/local/bin/entrypoint.sh && \
     rm -rf /var/cache/apk/* /tmp/*
 
 WORKDIR ${PROJECT_PATH}
@@ -36,4 +37,4 @@ WORKDIR ${PROJECT_PATH}
 
 VOLUME ["${SSH_SERVER_KEYS}"]
 
-ENTRYPOINT ["entrypoint.sh"]
+CMD ["entrypoint.sh"]
