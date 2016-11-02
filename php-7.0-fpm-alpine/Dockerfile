@@ -35,4 +35,6 @@ EXPOSE 22
 
 WORKDIR ${PROJECT_PATH}
 
-CMD ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisord.ini"]
