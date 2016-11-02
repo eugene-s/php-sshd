@@ -1,5 +1,5 @@
 # PHP-sshd
-PHP remote interpreter with Alpine Linux.
+PHP remote interpreter with Alpine Linux over ssh.
 
 **Only for developing**.
 
