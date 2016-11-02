@@ -1,5 +1,5 @@
 # PHP-sshd
-PHP remote interpreter with Alpine Linux.
+PHP remote interpreter with Alpine Linux over ssh.
 
 **Only for developing**.
 
@@ -9,7 +9,7 @@ PHP remote interpreter with Alpine Linux.
 
 1. Run image:
 
-    ```
+    ```{r, engine='bash'}
     docker run -d --name my-php-project -p <your-ssh-port>:22 -v "$PWD":/var/www eugenes1/php-sshd
     ```
     
